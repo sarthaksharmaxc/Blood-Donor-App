@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.springsecurity.demo.RegLoginMailHemlataApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.629 s - in com.springsecurity.demo.RegLoginMailHemlataApplicationTests

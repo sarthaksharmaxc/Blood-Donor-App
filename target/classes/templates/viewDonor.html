@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<title>Available Donors</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+             
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          
+           
+  <style type="text/css">
+           form {
+	max-width: auto;
+	margin: 20px auto;
+	padding: 20px 20px;
+	background: #fff;
+	border-radius: 8px;
+}
+</style>
+	</head>
+	<body>
+	<center>
+		<div class="container">
+        <h2>Available Donors</h2>
+        
+        <center><h2><span th:text="${message}"></span></h2></center>
+        <table class="table" style="border:1px solid black">
+         <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Address</th>
+                <th>Parent name</th>
+                <th>email</th>
+                <th>age</th>
+                <th>blood group</th>
+            </tr>
+             </thead>
+             <tbody>
+            <tr th:each="donor : ${donors}">
+                <td th:text="${donor.id}"></td>
+                <td th:text="${donor.name}"></td>
+                <td th:text="${donor.location}"></td>
+                <td th:text="${donor.Address}"></td>
+                <td th:text="${donor.parentName}"></td>
+                <td th:text="${donor.email}"></td>
+                <td th:text="${donor.age}"></td>
+                <td th:text="${donor.bloodGroup}"></td>
+            
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+   </center>
+    <center>
+            <a href="/add-donor" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Add New Donor</a>
+   			<a href="/contactPlasma" class="btn btn-primary btn-ld" role="button" aria-pressed="true">contact for Blood</a>
+   			<a href="/logout" class="btn btn-primary btn-sm">Logout</a>
+        </center>
+    
+
+	</body>
+</html>
